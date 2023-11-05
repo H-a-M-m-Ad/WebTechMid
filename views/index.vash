@@ -65,7 +65,7 @@
         }
     </style>
     <script src="js/htmx.min.js"></script>
-    <title>Document</title>
+    <title>Pharmacy</title>
 </head>
 
 <body>
@@ -78,29 +78,33 @@
 
         <div class="items"
             style="display: flex; flex-wrap: wrap; font-family: 'Segoe UI'; overflow-y: auto; height: 93vh; align-content: flex-start;">
-            <div>
+            @model.medicines.forEach(function(medicine){
+                <div>
                 <div class="item-title">
+                    @(medicine.Stock == 0 ? <p style="text-decoration: none; color: #2267fc;">
+                        @medicine.Name</a> :
                     <a href="#" style="text-decoration: none; color: #2267fc;">
-                        AMODIP 10MG TAB</a>
+                        @medicine.Name</a>)
                 </div>
                 <div style="position: relative; font-size: 15px; height: 60px;">
                     <span style="font-weight: bold;">Category</span>
                     <br>
-                    TABLETS LOCAL
+                    @medicine.Category
                 </div>
                 <div
                     style="position: relative; height: 40px; font-size: 13px; color: fuchsia; word-break: break-all; padding: 0 10px; margin-top: 10px;">
-                    AMLODIPINE BESYLATE
+                    @medicine.GenericName
                 </div>
                 <div style="display: flex; position: relative; padding-left: 10px;">
                     <div style="color: brown; "><b>Price : </b></div>
-                    <div style="color: #808080;"><span> &nbsp;Rs</span> 538</div>
+                    <div style="color: #808080;"><span> &nbsp;Rs</span> @medicine.Price</div>
                 </div>
                 <div style="display: flex; position: relative; padding-left: 10px;">
                     <div style="color: rgb(42, 165, 73); "><b>Stock : </b></div>
-                    <div style="color: #808080; padding-left: 5px;" id="stock-438">330</div>
+                    <div style="color: #808080; padding-left: 5px;" id="stock-438">@medicine.Stock</div>
                 </div>
             </div>
+            })
         </div>
     </div>
     <div class="col" style="width: 34%;">

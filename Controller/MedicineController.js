@@ -27,6 +27,8 @@ exports.GetMedicines = Trackerror(async (req, res, next) => {
       { GenericName: { $regex: req.query.search || "", $options: "i" } }
     ]
   });
+  // res.render("index", { medicines: data });
+  // res.render("index");
   //   const dataCount = await MedicineModel.countDocuments();
   //   const Feature = new Features(
   //     MedicineModel.find(),
