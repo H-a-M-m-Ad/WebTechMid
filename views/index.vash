@@ -38,7 +38,7 @@
             background-color: #f0f0f0
         }
 
-        .col {
+        .Order {
             display: inline-block;
             /* border: 1px solid green; */
             vertical-align: top;
@@ -82,45 +82,48 @@
             
         </div>
     </div>
-    <div class="col" style="width: 34%;">
-        <div style="text-align: center;">
-            <h3>Order</h3>
-            <input type="hidden" name="oid" value="1XY2CEPN5QT">
-            <table style="width: 100%;">
-                <thead>
-                    <tr>
-                        <th>Sno</th>
-                        <th>Name</th>
-                        <th>Qty</th>
-                        <th>Price</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody id="order" class="">
-                    <tr>
-                        <td>1</td>
-                        <td>AMODIP 10MG TAB</td>
-                        <td><input type="number" name="qty" size="1" value="1" style="width: 40px;">
-                        </td>
-                        <td>538</td>
-                        <td id="price-438">538</td>
-                    </tr>
-
-                    <tr></tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>538</td>
-                    </tr>
-                </tfoot>
-            </table>
-            <a href="#">Check Out</a>
+        <div id="Order" style="width: 34%;">
+            
         </div>
-    </div>
+    // <div class="col" style="width: 34%;">
+    //     <div style="text-align: center;">
+    //         <h3>Order</h3>
+    //         <input type="hidden" name="oid" value="1XY2CEPN5QT">
+    //         <table style="width: 100%;">
+    //             <thead>
+    //                 <tr>
+    //                     <th>Sno</th>
+    //                     <th>Name</th>
+    //                     <th>Qty</th>
+    //                     <th>Price</th>
+    //                     <th>Total</th>
+    //                 </tr>
+    //             </thead>
+    //             <tbody id="Order" class="">
+    //                 <tr>
+    //                     <td>1</td>
+    //                     <td>AMODIP 10MG TAB</td>
+    //                     <td><input type="number" name="qty" size="1" value="1" style="width: 40px;">
+    //                     </td>
+    //                     <td>538</td>
+    //                     <td id="price-438">538</td>
+    //                 </tr>
+
+    //                 <tr></tr>
+    //             </tbody>
+    //             <tfoot>
+    //                 <tr>
+    //                     <td></td>
+    //                     <td></td>
+    //                     <td></td>
+    //                     <td></td>
+    //                     <td>538</td>
+    //                 </tr>
+    //             </tfoot>
+    //         </table>
+    //         <a href="#">Check Out</a>
+    //     </div>
+    // </div>
 
 
 

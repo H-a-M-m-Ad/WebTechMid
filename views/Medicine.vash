@@ -1,9 +1,10 @@
+            // <div id="Order" style="width: 34%;"></div>
  @model.medicines.forEach(function(medicine){
                 <div>
                 <div class="item-title">
                     @(medicine.Stock == 0 ? <p style="text-decoration: none; color: #2267fc;">
                         @medicine.Name</a> :
-                    <a href="#" hx-post="/orders" hx-trigger="click" hx-swap="outerHTML" hx-target="#order" hx-vals='{"RowId":"@medicine.RowId"}' style="text-decoration: none; color: #2267fc;">
+                    <button  hx-post="/RenderOrders" hx-trigger="click" hx-swap="outerHTML" hx-target="#Order" hx-vals='{"RowId":"@medicine.RowId","Price":"@medicine.Price","Name":"@medicine.Name"}'  style="text-decoration: none; color: #2267fc;">
                         @medicine.Name</a>)
                 </div>
                 <div style="position: relative; font-size: 15px; height: 60px;">
@@ -25,3 +26,6 @@
                 </div>
             </div>
             })
+            //  <div id="Order" style="width: 34%;">
+       
+    </div>

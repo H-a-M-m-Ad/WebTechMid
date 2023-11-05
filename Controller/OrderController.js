@@ -5,22 +5,24 @@ const HandlerCallBack = require("../Utils/HandlerCallBack");
 const Features = require("../Utils/Features");
 exports.CreateOrder = Trackerror(async (req, res, next) => {
   const { Orders } = req.body;
+  const Order=JSON.parse(Orders)
+  console.log(JSON.parse(Orders));
   let StockUpdate;
   let filter;
-  Orders.map(async (Order) => {
-    await OrderModel.create({
-      RowId: Order.RowId,
-      qty: Order.qty
-    });
-    Stock = await MedicineModel.findOne({
-      RowId: Order.RowId
-    }).select("Stock");
-    Stock = {
-      Stock: Stock.Stock - Order.qty
-    };
-    filter = { RowId: Order.RowId };
-    await MedicineModel.findOneAndUpdate(filter, Stock);
+  //   Orders.map(async (Order) => {
+  await OrderModel.create({
+    RowId: Order.RowId,
+    qty: Order.qty
   });
+  Stock = await MedicineModel.findOne({
+    RowId: Order.RowId
+  }).select("Stock");
+  Stock = {
+    Stock: Stock.Stock - Order.qty
+  };
+  filter = { RowId: Order.RowId };
+  await MedicineModel.findOneAndUpdate(filter, Stock);
+  //   });
   // await MedicineModel.findByIdAndUpdate({
   //     RowId,
 

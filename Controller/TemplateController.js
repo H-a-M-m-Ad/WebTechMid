@@ -11,3 +11,13 @@ exports.RenderMedicinesBySearch = Trackerror(async (req, res, next) => {
   const data = await api.get(`/api/GetMedicine?search=${req.body.search}`);
   res.render("Medicine", { medicines: data.data.data });
 });
+exports.RenderOrders = Trackerror(async (req, res, next) => {
+  let data = [
+    {
+      RowId: req.body.RowId,
+      Price: req.body.Price,
+      Name: req.body.Name
+    }
+  ];
+  res.render("Order", { Order: data[0] });
+});
